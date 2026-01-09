@@ -49,6 +49,16 @@ class TaskConfig(GenerationConfig):
         description="Video frame rate"
     )
     
+    video_hold_frames: int = Field(
+        default=1,
+        description="Frames to hold at start and end of video"
+    )
+    
+    video_operation_frames: int = Field(
+        default=6,
+        description="Frames per edit operation in video"
+    )
+    
     # ══════════════════════════════════════════════════════════════════════════
     #  EDIT DISTANCE TASK SETTINGS
     # ══════════════════════════════════════════════════════════════════════════

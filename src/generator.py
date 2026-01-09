@@ -328,7 +328,9 @@ class TaskGenerator(BaseGenerator):
         frames = self._create_edit_animation_frames(
             initial_string,
             target_string,
-            edit_operations
+            edit_operations,
+            hold_frames=self.config.video_hold_frames,
+            operation_frames=self.config.video_operation_frames
         )
         
         if not frames:
@@ -346,8 +348,8 @@ class TaskGenerator(BaseGenerator):
         initial_string: str,
         target_string: str,
         edit_operations: List[Dict],
-        hold_frames: int = 5,
-        operation_frames: int = 15
+        hold_frames: int = 2,
+        operation_frames: int = 8
     ) -> List[Image.Image]:
         """
         Create animation frames showing edit operations step by step.
